@@ -20,8 +20,8 @@ function* rootSaga() {
 
 //S A G A S 
 
-function* getMovieSaga(action){
-    try{
+function* getMovieSaga(action) {
+    try {
         const response = yield axios({
             method: 'GET',
             url: '/movies'
@@ -30,8 +30,8 @@ function* getMovieSaga(action){
             type: 'SET_MOVIES',
             payload: response.data
         });
-    } catch(err) {
-           console.log('error getting elements', err); 
+    } catch (err) {
+        console.log('error getting elements', err);
     }
 }
 
@@ -72,6 +72,6 @@ const storeInstance = createStore(
 // Pass rootSaga into our sagaMiddleware
 sagaMiddleware.run(rootSaga);
 
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, 
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>,
     document.getElementById('root'));
 registerServiceWorker();

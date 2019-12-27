@@ -30,9 +30,9 @@ class Home extends Component {
         return (
             <div>
                 <h2>WHAT UP FROM HOME</h2>
-            <table className="App">
-                <tbody>{movies}</tbody>
-            </table>
+                <table className="App">
+                    <tbody>{movies}</tbody>
+                </table>
             </div>
         )
     }
