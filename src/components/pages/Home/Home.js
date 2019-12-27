@@ -21,11 +21,11 @@ class Home extends Component {
 
     render() {
 
-        const movies = this.props.store.movies.map((item, index) => {
+        const movieArray = this.props.store.movies.map((item, index) => {
             return (
                 <tr key={index}>
                     <td onClick={(event) => this.clickEvent(event, item.name)}>
-                        <img alt="movie poster" src={item.poster}></img>
+                        <img src={item.poster}></img>
                     </td>
                     <td>
                         <h2>{item.title}</h2>
@@ -35,13 +35,11 @@ class Home extends Component {
             )
         })
 
+
         return (
-            <div>
-                <h2>WHAT UP FROM HOME</h2>
-                <table className="App">
-                    <tbody>{movies}</tbody>
-                </table>
-            </div>
+            <table>
+                <tbody>{movieArray}</tbody>
+            </table>
         )
     }
 }
