@@ -6,18 +6,21 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 class Home extends Component {
 
     componentDidMount() {
+
         this.props.dispatch({
             type: 'GET_MOVIES',
         });
     }
 
     clickEvent = (event, id) => {
+  
         this.props.dispatch({
             type: 'GET_MOVIES',
             payload: id,
         })
         this.props.history.push('/details');
     }
+   
 
     render() {
 
@@ -30,6 +33,7 @@ class Home extends Component {
                     <td>
                         <h2>{item.title}</h2>
                         {item.description}
+                        {item.id}
                     </td>
                 </tr>
             )

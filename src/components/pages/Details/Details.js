@@ -9,20 +9,19 @@ class Details extends Component {
     render() {
 
         const movies = this.props.store.movies.map((item, index) => {
-            return <tr key={index}>
-                <td>
-                    <td>
-                        <h2>{item.title}</h2>
-                        {item.description}
-                    </td>
-                    <h4>Genre: {item.name}</h4>
-                </td>
-            </tr>
+            return <div key={index}>
+
+                <h2>{item.title}</h2>
+                {item.description}
+                <h4>Genre: {item.name}</h4>
+                <h4>DB ID: {item.id}</h4>
+
+            </div>
         })
 
         return (
             <table className="App">
-            <tbody>{movies}</tbody>
+                <tbody>{movies}</tbody>
             </table>
         )
     }
