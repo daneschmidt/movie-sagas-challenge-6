@@ -11,6 +11,14 @@ class Home extends Component {
         });
     }
 
+    clickEvent = (event, id) => {
+        this.props.dispatch({
+            type: 'GET_MOVIES',
+            payload: id,
+        })
+        this.props.history.push('/details');
+    }
+
     render() {
 
         const movies = this.props.store.movies.map((item, index) => {
