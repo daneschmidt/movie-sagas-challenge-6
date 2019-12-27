@@ -1,4 +1,6 @@
 import React, { Component} from 'react';
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 
  class Details extends Component {
 
@@ -10,4 +12,4 @@ import React, { Component} from 'react';
      }
  }
 
- export default Details;
+ export default connect(mapStoreToProps)(Details);
