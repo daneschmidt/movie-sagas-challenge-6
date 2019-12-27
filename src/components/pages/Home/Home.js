@@ -1,14 +1,26 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 
- class Home extends Component {
 
-     render(){
+class Home extends Component {
 
-         return(
-             <div>WHAT UP FROM HOME</div>
-         )
-     }
- }
+    componentDidMount() {
+        this.props.dispatch({
+            type: 'GET_MOVIES',
+        });
+    }
 
- export default Home;
+    render() {
+
+        return (
+            <div>WHAT UP FROM HOME</div>
+        )
+    }
+}
+
+export default connect(mapStoreToProps)(Home);
+
+
+
+
