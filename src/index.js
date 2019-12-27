@@ -24,7 +24,7 @@ function* getMovieSaga(action){
     try{
         const response = yield axios({
             method: 'GET',
-            url: '/api/movies'
+            url: '/movies'
         });
         yield put({
             type: 'SET_MOVIES',
