@@ -21,7 +21,6 @@ class Home extends Component {
         this.props.history.push('/details');
     }
    
-
     render() {
 
         const movieArray = this.props.store.movies.map((item, index) => {
@@ -38,7 +37,6 @@ class Home extends Component {
                 </tr>
             )
         })
-
 
         return (
             <table>

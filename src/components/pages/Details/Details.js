@@ -4,11 +4,9 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class Details extends Component {
 
-
-
     render() {
 
-        const movies = this.props.store.movies.map((item, index) => {
+        const movieDetailArray = this.props.store.movies.map((item, index) => {
             return <div key={index}>
 
                 <h2>{item.title}</h2>
@@ -21,11 +19,10 @@ class Details extends Component {
 
         return (
             <table className="App">
-                <tbody>{movies}</tbody>
+                <tbody>{movieDetailArray}</tbody>
             </table>
         )
     }
 }
-
 
 export default connect(mapStoreToProps)(Details);
