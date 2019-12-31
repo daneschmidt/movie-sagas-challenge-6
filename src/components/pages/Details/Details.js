@@ -4,17 +4,32 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class Details extends Component {
 
+    componentDidMount(title, description, name) {
+
+        this.props.dispatch({
+            type: 'GET_MOVIES',
+            payload: {
+                title,
+                description,
+                name,
+            }
+        });
+    }
+
     render() {
 
         const movieDetailArray = this.props.store.movies.map((item, index) => {
-            return <div key={index}>
-
-                <h2>{item.title}</h2>
-                {item.description}
-                <h4>Genre: {item.name}</h4>
-                <h4>DB ID: {item.id}</h4>
-
-            </div>
+            return <tr key={index}>
+            <td>
+                <td>
+                    <h2>{item.title}</h2>
+                    {item.description}
+                </td>
+                <h4>{item.name}</h4>
+                <h2>DANE TEST</h2>
+                <p>{JSON.stringify(this.props.reduxState)}</p>
+            </td>
+        </tr>
         })
 
         return (

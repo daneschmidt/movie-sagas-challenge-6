@@ -32,16 +32,19 @@ class Home extends Component {
                     <td>
                         <h2>{item.title}</h2>
                         {item.description}
-                        {item.id}
+                    
                     </td>
                 </tr>
             )
         })
 
         return (
+            <div>
             <table>
                 <tbody>{movieArray}</tbody>
             </table>
+            <p>{JSON.stringify(this.props.reduxState)}</p>
+            </div>
         )
     }
 }

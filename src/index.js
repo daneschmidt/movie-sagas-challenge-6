@@ -14,14 +14,14 @@ import axios from 'axios';
 
 // Create the rootSaga generator function
 function* rootSaga() {
-    yield takeEvery('GET_MOVIES', getMovieSaga);
+    yield takeEvery('GET_MOVIES', getMoviesSaga);
     yield takeEvery('GET_DETAILS', getDetailsSaga);
 
 }
 
 //S A G A S 
 
-function* getMovieSaga(action) {
+function* getMoviesSaga(action) {
     try {
         const response = yield axios({
             method: 'GET',
@@ -43,7 +43,7 @@ function* getDetailsSaga(action) {
             url: '/movies/details/' + action.payload,
         });
         yield put({
-            type: 'SET_DETAILS',
+            type: 'SET_MOVIES',
             payload: response.data
         });
     } catch (err) {
@@ -84,6 +84,7 @@ const storeInstance = createStore(
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
 );
+
 
 // Pass rootSaga into our sagaMiddleware
 sagaMiddleware.run(rootSaga);
