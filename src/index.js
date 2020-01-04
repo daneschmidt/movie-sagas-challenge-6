@@ -43,7 +43,7 @@ function* getDetailsSaga(action) {
             url: '/movies/details/' + action.payload,
         });
         yield put({
-            type: 'SET_MOVIES',
+            type: 'GET_DETAILS',
             payload: response.data
         });
     } catch (err) {

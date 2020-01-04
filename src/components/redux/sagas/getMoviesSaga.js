@@ -7,7 +7,7 @@ function* getMovies() {
     try {
         const response = yield axios({
             method: 'GET',
-            url: '/getMovies'
+            url: '/movies'
         });
        
         yield put({
@@ -18,8 +18,6 @@ function* getMovies() {
         console.log('error fetching homepage movies', err);
     }
 }
-function* getHMovies() {
-    yield takeLatest('GET_HOMEPAGE', getHomePage);
-}
+
 
 export default getMoviesSaga;
